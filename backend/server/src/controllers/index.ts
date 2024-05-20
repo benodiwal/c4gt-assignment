@@ -1,9 +1,9 @@
-import { IContext } from "interfaces";
+import { IContext } from 'interfaces';
 
 export default abstract class AbstractController {
-    ctx: IContext;
+  ctx: IContext;
 
-    constructor(ctx: IContext) {
-        this.ctx = ctx;
-    }
+  constructor(ctx: IContext) {
+    this.ctx = ctx;
+  }
 }

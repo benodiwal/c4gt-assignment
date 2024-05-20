@@ -6,6 +6,7 @@ import { errorHandler } from 'middlewares/error.middleware';
 import { IDatabase } from 'interfaces';
 import getEnvVar from 'env/index';
 import QueryRouter from 'routers/query.router';
+import cors from "cors";
 
 export default class Server {
   db: IDatabase;
@@ -17,6 +18,7 @@ export default class Server {
   }
 
   #registerHandlers() {
+    this.engine.use(cors());
     this.engine.use(logger);
     this.engine.use(Express.json());
 
