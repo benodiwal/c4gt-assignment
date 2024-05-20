@@ -1,6 +1,6 @@
 "use client";
 import { FormEvent, useState } from "react";
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 
 const Home = () => {
   const [query, setQuery] = useState<string>('');
