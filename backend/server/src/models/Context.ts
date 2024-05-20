@@ -1,9 +1,9 @@
-import { IContext, IDatabase } from "interfaces";
+import { IContext, IDatabase } from 'interfaces';
 
 export default class Context implements IContext {
-    db: IDatabase;
+  db: IDatabase;
 
-    constructor(database: IDatabase) {
-        this.db = database;
-    }
+  constructor(database: IDatabase) {
+    this.db = database;
+  }
 }

@@ -1,10 +1,11 @@
-import Express, { NextFunction, Request, Response, Express as TExpress } from 'express'
+import Express, { NextFunction, Request, Response, Express as TExpress } from 'express';
 import logger from 'middlewares/logger.middleware';
 import Context from 'models/Context';
 import { NotFoundError } from 'errors/not-found-error';
 import { errorHandler } from 'middlewares/error.middleware';
 import { IDatabase } from 'interfaces';
 import getEnvVar from 'env/index';
+import QueryRouter from 'routers/query.router';
 
 export default class Server {
   db: IDatabase;
@@ -28,6 +29,9 @@ export default class Server {
     });
 
     const ctx = new Context(this.db);
+
+    const queryRouter = new QueryRouter(ctx, this.engine, '/query');
+    queryRouter.register();
 
     this.engine.all('*', async (__: Request, _: Response, next: NextFunction) => {
       next(new NotFoundError());
