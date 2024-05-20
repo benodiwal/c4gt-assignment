@@ -7,7 +7,8 @@ export default class QueryController extends AbstractController {
     return async (req: Request, res: Response) => {
         const { query } = req.body;
         const response = await nplService.getSQLQuery(query);
-        return res.status(200).json(response);
+        const data = await this.ctx.db.client.$queryRawUnsafe(response.sql);
+        return res.status(200).json(data);
     };
   }
 }
