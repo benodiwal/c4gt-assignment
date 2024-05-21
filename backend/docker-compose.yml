@@ -3,20 +3,20 @@ version: '3.8'
 services:
     express-app:
       build:
-        context: 
+        context: ./server
         dockerfile: Dockerfile
       ports:
         - "3000:3000"
       depends_on:
         - python-service
       volumes:
-        - ./path-to-express-app:/app
+        - ./server:/app
 
     python-service:
        build:
-        context: ./path-to-python-service
+        context: ./nlp-service
         dockerfile: Dockerfile
        ports:
         - "5000:5000"
        volumes:
-        - ./path-to-python-service:/app
+        - ./nlp-service:/app
