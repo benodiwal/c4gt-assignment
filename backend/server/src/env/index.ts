@@ -4,6 +4,7 @@ import { config } from 'dotenv';
 const envSchema = z.object({
   PORT: z.string(),
   DATABASE_URL: z.string(),
+  NLP_SERVICE_SERVER_URL: z.string(),
 });
 
 export const parseEnv = (): void => {

@@ -8,7 +8,7 @@ const Home = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const response = await axios.post('http://localhost:8000/query', { query });
+    const response = await axios.post(`${process.env.SERVER_URL}/query`, { query });
     setResults(response.data);
   }
 

@@ -7,4 +7,3 @@ def hello():
     print(data['text'])
     sql_query =nlp.convert_to_sql(data['text'])
     return jsonify({ 'sql': sql_query })
-    # return jsonify({'sql': 'SELECT * FROM "Employee"'})

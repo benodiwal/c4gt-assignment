@@ -1,5 +1,5 @@
 from nltk import pos_tag
-from nltk.tokenize import word_tokenize, RegexpTokenizer
+from nltk.tokenize import RegexpTokenizer
 
 table_columns = [ "name", "email", "checkInTime", "checkOutTime" ]
 
@@ -34,7 +34,7 @@ def convert_to_sql(natural_langauge_query):
     from_clause = "FROM \"Employee\""
     selected_fileds = []
     
-    for i, (word, tag) in enumerate(tagged):
+    for i, (word, _) in enumerate(tagged):
         word = get_field_for_word(word)
         if word in table_columns:
             selected_fileds.append(word)
