@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+    express-app:
+      build:
+        context: 
+        dockerfile: Dockerfile
+      ports:
+        - "3000:3000"
+      depends_on:
+        - python-service
+      volumes:
+        - ./path-to-express-app:/app
+
+    python-service:
+       build:
+        context: ./path-to-python-service
+        dockerfile: Dockerfile
+       ports:
+        - "5000:5000"
+       volumes:
+        - ./path-to-python-service:/app
