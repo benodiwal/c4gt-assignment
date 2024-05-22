@@ -1,5 +1,5 @@
 import QueryController from 'controllers/query.controller';
-import AbstractRouter from 'routers';
+import AbstractRouter from 'routers/index';
 
 export default class QueryRouter extends AbstractRouter {
   registerRoutes(): void {

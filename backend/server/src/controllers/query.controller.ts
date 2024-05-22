@@ -1,4 +1,4 @@
-import AbstractController from 'controllers';
+import AbstractController from 'controllers/index';
 import { Request, Response } from 'express';
 import nplService from 'libs/nlp.lib';
 

@@ -1,7 +1,7 @@
 import Express, { NextFunction, Request, Response, Express as TExpress } from 'express';
 import logger from 'middlewares/logger.middleware';
-import Context from 'models/Context';
-import { NotFoundError } from 'errors/not-found-error';
+import Context from '../Context';
+import { NotFoundError } from '../errors/not-found-error';
 import { errorHandler } from 'middlewares/error.middleware';
 import { IDatabase } from 'interfaces';
 import getEnvVar from 'env/index';
